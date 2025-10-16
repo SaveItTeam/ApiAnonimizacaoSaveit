@@ -1,0 +1,33 @@
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Arquivos de configuração sensíveis
+.env
+*.env
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Cache de pacotes e build
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Configurações locais de IDEs
+.vscode/
+.idea/
+
+# Logs e temporários
+*.log
+*.tmp
+*.bak
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
