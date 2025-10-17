@@ -7,7 +7,7 @@ class EmpresaAnonimizada(Base):
     id: Mapped[int] = mapped_column(sa.Integer, primary_key=True)
     id_funcionario: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('funcionario_anonimizado.id'), nullable=False)
     id_cliente: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('cliente_anonimizado.id'), nullable=False)
-    procura: Mapped[str] = mapped_column(sa.String(255), nullable=False)
+    procura: Mapped[str] = mapped_column(sa.Text, nullable=False)
     id_plano: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('plano_anonimizado.id'), nullable=False)
 
     def __repr__(self) -> str:
