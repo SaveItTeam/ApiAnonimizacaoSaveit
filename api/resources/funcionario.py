@@ -29,7 +29,7 @@ class Funcionario(Resource):
     def post(self):
         novo_funcionario = request.get_json()
         df_funcionario_anonimizado = pd.DataFrame([novo_funcionario]).loc[:, ['id', 'nome', 'cpf', 'rg', 'dt_nascimento', 'email', 'senha', 'cargo', 'dt_contratacao', 'telefone_pessoal', 'telefone_trabalho', 'experiencia', 'id_empresa', 'id_industria', 'id_admin']]
-        df_funcionario_anonimizado['nome'] = df_funcionario_anonimizado['nome'].map(Anonimizacao.mascarar)
+        df_funcionario_anonimizado['nome'] = df_funcionario_anonimizado['nome'].map(Anonimizacao.criptografar)
         df_funcionario_anonimizado['cpf'] = df_funcionario_anonimizado['cpf'].map(Anonimizacao.hashear)
         df_funcionario_anonimizado['rg'] = df_funcionario_anonimizado['rg'].map(Anonimizacao.hashear)
         df_funcionario_anonimizado['dt_nascimento'] = df_funcionario_anonimizado['dt_nascimento'].map(Anonimizacao.generalizar_data)

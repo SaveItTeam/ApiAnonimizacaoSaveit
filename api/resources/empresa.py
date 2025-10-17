@@ -19,7 +19,7 @@ class Empresa(Resource):
     @marshal_with(empresa_campos)
     def post(self):
         nova_empresa = request.get_json()
-        df_empresa_anonimizada = pd.DataFrame([nova_empresa]).loc[:, ['id', 'id_cliente' 'procura']]
+        df_empresa_anonimizada = pd.DataFrame([nova_empresa])
         empresa_anonimizada = EmpresaAnonimizada(**df_empresa_anonimizada.to_dict(orient='records')[0])
         
         with SessionLocal() as session:

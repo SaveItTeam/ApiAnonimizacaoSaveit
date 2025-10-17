@@ -5,7 +5,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 class AdminAnonimizado(Base):
     __tablename__ = 'admin_anonimizado'
     id: Mapped[int] = mapped_column(sa.Integer, primary_key=True)
-    cargo: Mapped[str] = mapped_column(sa.Text, nullable=False)
+    cargo: Mapped[str] = mapped_column(sa.String(68), nullable=False)
     nome_empresa: Mapped[str] = mapped_column(sa.String(128), nullable=False)
     nome_admin: Mapped[str] = mapped_column(sa.String(128), nullable=False)
     senha: Mapped[str] = mapped_column(sa.String(128), nullable=False)
