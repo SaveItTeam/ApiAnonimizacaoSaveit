@@ -12,7 +12,6 @@ cliente_campos = {
     'email': fields.String,
     'senha': fields.String,
     'telefone': fields.String,
-    'tipo': fields.Integer,
     'tipo_venda': fields.String,
     'id_empresa': fields.Integer,
     'id_endereco': fields.Integer,
