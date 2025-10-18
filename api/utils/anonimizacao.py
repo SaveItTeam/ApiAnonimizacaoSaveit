@@ -1,6 +1,6 @@
 import hashlib
 from cryptography.fernet import Fernet
-from datetime import datetime
+from datetime import datetime, date
 import re
 
 key = Fernet.generate_key()
@@ -41,6 +41,6 @@ class Anonimizacao:
         return cargos.get(cargo, 'Outro')
     
     @staticmethod
-    def generalizar_data(data: str) -> str:
-        data = datetime.fromisoformat(data)
-        return data.strftime('%m-%Y')
+    def generalizar_data(data: str) -> datetime:
+        data = datetime.strptime(data, '%Y-%m-%d')
+        return date(data.year, data.month, 1)

@@ -6,7 +6,7 @@ class IndustriaAnonimizada(Base):
     __tablename__ = "industria_anonimizada"
 
     id: Mapped[int] = mapped_column(sa.Integer, primary_key=True)
-    vende: Mapped[str] = mapped_column(sa.String(100), nullable=False)
+    vende: Mapped[str] = mapped_column(sa.String(128), nullable=False)
     id_plano: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('plano_anonimizado.id'), nullable=False)
     id_pagamento: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('pagamento_anonimizado.id'), nullable=False)
 

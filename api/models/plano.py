@@ -6,7 +6,7 @@ class PlanoAnonimizado(Base):
     __tablename__ = 'plano_anonimizado'
     id: Mapped[int] = mapped_column(sa.Integer, primary_key=True)
     preco: Mapped[float] = mapped_column(sa.Float, nullable=False)
-    descricao: Mapped[str] = mapped_column(sa.String(100), nullable=False)
+    descricao: Mapped[str] = mapped_column(sa.Text, nullable=False)
     id_pagamento: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('pagamento_anonimizado.id'), nullable=False)
 
     def __repr__(self):
