@@ -9,8 +9,7 @@ anonimizacao = Anonimizacao()
 
 empresa_campos = {
     'id': fields.Integer,
-    'id_funcionario': fields.Integer,
-    'id_cliente': fields.Integer,
+    # 'id_cliente': fields.Integer,
     'procura': fields.String,
     'id_plano': fields.Integer
 }

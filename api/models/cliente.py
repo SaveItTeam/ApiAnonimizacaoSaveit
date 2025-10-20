@@ -18,4 +18,4 @@ class ClienteAnonimizado(Base):
     id_industria: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('industria_anonimizada.id'), nullable=False)
 
     def __repr__(self) -> str:
-        return f"ClienteAnonimizado(id={self.id!r}, cnpj={self.cnpj!r}, nome={self.nome!r}, email={self.email!r}, telefone={self.telefone!r}'), tipo={self.tipo!r}, tipo_venda={self.tipo_venda!r}, id_empresa={self.id_empresa!r}, id_endereco={self.id_endereco!r}, id_industria={self.id_industria!r})"
+        return f"ClienteAnonimizado(id={self.id!r}, cnpj={self.cnpj!r}, nome={self.nome!r}, email={self.email!r}, telefone={self.telefone!r}'), tipo_venda={self.tipo_venda!r}, id_empresa={self.id_empresa!r}, id_endereco={self.id_endereco!r}, id_industria={self.id_industria!r})"
