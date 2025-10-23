@@ -8,7 +8,8 @@ industria_campos = {
     'id': fields.Integer,
     'vende': fields.String,
     'id_plano': fields.Integer,
-    'id_pagamento': fields.Integer
+    'id_pagamento': fields.Integer,
+    'id_cliente': fields.Integer
 }
 
 class Industria(Resource):

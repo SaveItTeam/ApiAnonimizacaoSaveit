@@ -8,7 +8,6 @@ plano_campos = {
     'id': fields.Integer,
     'preco': fields.Float,
     'descricao': fields.String,
-    'id_pagamento': fields.Integer
 }
 
 class Plano(Resource):

@@ -21,7 +21,7 @@ class FuncionarioAnonimizado(Base):
     experiencia: Mapped[str] = mapped_column(sa.Text, nullable=False)
     id_empresa: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('empresa_anonimizada.id'), nullable=False)
     id_industria: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('industria_anonimizada.id'), nullable=False)
-    id_admin: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('admin_anonimizado.id'), nullable=False)
+    is_admin: Mapped[bool] = mapped_column(sa.Boolean, nullable=False)
 
     def __repr__(self) -> str:
-        return f"FuncionarioAnonimizado(id={self.id!r}, nome={self.nome!r}, cpf={self.cpf!r}, rg={self.rg!r}, dt_nascimento={self.dt_nascimento!r}, email={self.email!r}, senha={self.senha!r}, cargo={self.cargo!r}, dt_contratacao={self.dt_contratacao!r}, telefone_pessoal={self.telefone_pessoal!r}, telefone_trabalho={self.telefone_trabalho!r}, experiencia={self.experiencia!r}, id_empresa={self.id_empresa!r}, id_industria={self.id_industria!r}, id_admin={self.id_admin!r})"
+        return f"FuncionarioAnonimizado(id={self.id!r}, nome={self.nome!r}, cpf={self.cpf!r}, rg={self.rg!r}, dt_nascimento={self.dt_nascimento!r}, email={self.email!r}, senha={self.senha!r}, cargo={self.cargo!r}, dt_contratacao={self.dt_contratacao!r}, telefone_pessoal={self.telefone_pessoal!r}, telefone_trabalho={self.telefone_trabalho!r}, experiencia={self.experiencia!r}, id_empresa={self.id_empresa!r}, id_industria={self.id_industria!r}, is_admin={self.is_admin!r})"
