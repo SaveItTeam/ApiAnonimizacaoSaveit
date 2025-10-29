@@ -8,7 +8,6 @@ plano_campos = {
     'id': fields.Integer,
     'preco': fields.Float,
     'descricao': fields.String,
-    'id_pagamento': fields.Integer
 }
 
 class Plano(Resource):
@@ -24,4 +23,4 @@ class Plano(Resource):
             session.refresh(plano_anonimizado)
             print(session.query(PlanoAnonimizado).all())
 
-        return novo_plano, 201
+        return plano_anonimizado, 201

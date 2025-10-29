@@ -3,12 +3,15 @@ from flask import request
 import pandas as pd
 from api.models.industria import IndustriaAnonimizada
 from api.db import SessionLocal
+from api.utils.anonimizacao import Anonimizacao
 
 industria_campos = {
     'id': fields.Integer,
     'vende': fields.String,
     'id_plano': fields.Integer,
-    'id_pagamento': fields.Integer
+    'cod_industria': fields.String,
+    'id_pagamento': fields.Integer,
+    'id_cliente': fields.Integer
 }
 
 class Industria(Resource):
@@ -16,6 +19,7 @@ class Industria(Resource):
     def post(self):
         nova_industria = request.get_json()
         df_industria_anonimizada = pd.DataFrame([nova_industria])
+        df_industria_anonimizada['cod_industria'] = df_industria_anonimizada['cod_industria'].map(Anonimizacao.hashear)
         industria_anonimizada = IndustriaAnonimizada(**df_industria_anonimizada.to_dict(orient='records')[0])
 
         with SessionLocal() as session:

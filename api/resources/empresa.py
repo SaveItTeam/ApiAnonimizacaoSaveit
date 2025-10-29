@@ -9,10 +9,9 @@ anonimizacao = Anonimizacao()
 
 empresa_campos = {
     'id': fields.Integer,
-    'id_funcionario': fields.Integer,
-    'id_cliente': fields.Integer,
     'procura': fields.String,
-    'id_plano': fields.Integer
+    'cod_empresa': fields.String,
+    'id_cliente': fields.Integer
 }
 
 class Empresa(Resource):
@@ -20,6 +19,7 @@ class Empresa(Resource):
     def post(self):
         nova_empresa = request.get_json()
         df_empresa_anonimizada = pd.DataFrame([nova_empresa])
+        df_empresa_anonimizada['cod_empresa'] = df_empresa_anonimizada['cod_empresa'].map(anonimizacao.hashear)
         empresa_anonimizada = EmpresaAnonimizada(**df_empresa_anonimizada.to_dict(orient='records')[0])
         
         with SessionLocal() as session:

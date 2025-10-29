@@ -10,7 +10,7 @@ funcionario_campos = {
     'nome': fields.String,
     'cpf': fields.String,
     'rg': fields.String,
-    'sexo': fields.String,
+    'genero': fields.String,
     'dt_nascimento': fields.String,
     'email': fields.String,
     'senha': fields.String,
@@ -21,14 +21,14 @@ funcionario_campos = {
     'experiencia': fields.String,
     'id_empresa': fields.Integer,
     'id_industria': fields.Integer,
-    'id_admin': fields.Integer
+    'is_admin': fields.Boolean
 }
 
 class Funcionario(Resource):
     @marshal_with(funcionario_campos)
     def post(self):
         novo_funcionario = request.get_json()
-        df_funcionario_anonimizado = pd.DataFrame([novo_funcionario]).loc[:, ['id', 'nome', 'cpf', 'rg', 'dt_nascimento', 'email', 'senha', 'cargo', 'dt_contratacao', 'telefone_pessoal', 'telefone_trabalho', 'experiencia', 'id_empresa', 'id_industria', 'id_admin']]
+        df_funcionario_anonimizado = pd.DataFrame([novo_funcionario]).loc[:, ['id', 'nome', 'cpf', 'rg', 'dt_nascimento', 'email', 'senha', 'cargo', 'dt_contratacao', 'telefone_pessoal', 'telefone_trabalho', 'experiencia', 'id_empresa', 'id_industria']]
         df_funcionario_anonimizado['nome'] = df_funcionario_anonimizado['nome'].map(Anonimizacao.criptografar)
         df_funcionario_anonimizado['cpf'] = df_funcionario_anonimizado['cpf'].map(Anonimizacao.hashear)
         df_funcionario_anonimizado['rg'] = df_funcionario_anonimizado['rg'].map(Anonimizacao.hashear)
