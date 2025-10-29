@@ -13,7 +13,8 @@ endereco_campos = {
     'cep_cidade': fields.String,
     'cep_estado': fields.String,
     'cep_pais': fields.String,
-    'cep_complemento': fields.String
+    'cep_complemento': fields.String,
+    'cep_rua_numero': fields.Integer
 }
 
 class Endereco(Resource):

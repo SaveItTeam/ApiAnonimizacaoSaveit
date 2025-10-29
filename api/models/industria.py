@@ -7,6 +7,7 @@ class IndustriaAnonimizada(Base):
 
     id: Mapped[int] = mapped_column(sa.Integer, primary_key=True)
     vende: Mapped[str] = mapped_column(sa.String(128), nullable=False)
+    cod_industria: Mapped[str] = mapped_column(sa.String(64), nullable=False)
     id_plano: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('plano_anonimizado.id'), nullable=False)
     id_pagamento: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('pagamento_anonimizado.id'), nullable=False)
     id_cliente: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('cliente_anonimizado.id'), nullable=False)

@@ -19,7 +19,7 @@ class Admin(Resource):
         df_admin_anonimizado = pd.DataFrame([novo_admin])
         df_admin_anonimizado['nome_admin'] = df_admin_anonimizado['nome_admin'].map(Anonimizacao.criptografar)
         df_admin_anonimizado['email_dominio'] = df_admin_anonimizado['email'].map(Anonimizacao.pegar_dominio)
-        df_admin_anonimizado['email'] = df_admin_anonimizado['email'].map(Anonimizacao.criptografar)
+        df_admin_anonimizado['email'] = df_admin_anonimizado['email'].map(Anonimizacao.hashear)
         df_admin_anonimizado['senha'] = df_admin_anonimizado['senha'].map(Anonimizacao.hashear)
         admin_anonimizado = AdminAnonimizado(**df_admin_anonimizado.to_dict(orient='records')[0])
 

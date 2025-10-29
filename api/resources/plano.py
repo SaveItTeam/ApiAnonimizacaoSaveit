@@ -23,4 +23,4 @@ class Plano(Resource):
             session.refresh(plano_anonimizado)
             print(session.query(PlanoAnonimizado).all())
 
-        return novo_plano, 201
+        return plano_anonimizado, 201

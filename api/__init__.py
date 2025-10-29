@@ -8,6 +8,7 @@ from api.resources.industria import Industria
 from api.resources.pagamento import Pagamento
 from api.resources.plano import Plano
 from api.resources.cliente import Cliente
+from api.resources.telefone import Telefone
 
 def create_app():
     app = Flask(__name__)
@@ -26,5 +27,6 @@ def create_app():
     api.add_resource(Pagamento, '/api/pagamento')
     api.add_resource(Plano, '/api/plano')
     api.add_resource(Cliente, '/api/cliente')
+    api.add_resource(Telefone, '/api/telefone')
     
     return app

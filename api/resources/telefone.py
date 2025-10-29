@@ -7,7 +7,7 @@ from api.db import SessionLocal
 
 telefone_campos = {
     'id': fields.Integer,
-    'numero': fields.String,
+    'num_telefone': fields.String,
     'id_cliente': fields.Integer,
 }
 
@@ -16,7 +16,7 @@ class Telefone(Resource):
     def post(self):
         novo_telefone = request.get_json()
         df_telefone_anonimizado = pd.DataFrame([novo_telefone])
-        df_telefone_anonimizado['numero'] = df_telefone_anonimizado['numero'].map(Anonimizacao.mascarar)
+        df_telefone_anonimizado['num_telefone'] = df_telefone_anonimizado['num_telefone'].map(Anonimizacao.mascarar)
 
         telefone_anonimizado = TelefoneAnonimizado(**df_telefone_anonimizado.to_dict(orient='records')[0])
 
@@ -26,4 +26,4 @@ class Telefone(Resource):
             session.refresh(telefone_anonimizado)
             print(session.query(TelefoneAnonimizado).all())
 
-        return novo_telefone, 201
+        return telefone_anonimizado, 201
