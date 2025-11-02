@@ -1,30 +1,26 @@
 aniso8601==10.0.1
 blinker==1.9.0
-click==8.3.0
+click==8.1.7
 colorama==0.4.6
-itsdangerous==2.2.0
-Jinja2==3.1.6
-MarkupSafe==3.0.3
-pytz==2025.2
-six==1.17.0
+itsdangerous==2.1.2
+Jinja2==3.1.4
+MarkupSafe==2.1.5
+pytz==2024.1
+six==1.16.0
 
 # --- Dependências principais da API ---
-Flask==3.1.2
+Flask==2.3.3
 Flask-RESTful==0.3.10
-SQLAlchemy==2.0.36
-psycopg2-binary==2.9.9
+SQLAlchemy==2.0.28
+psycopg2-binary==2.9.6
 
 # --- Manipulação e anonimização de dados ---
-pandas==2.2.3
-python-dateutil==2.9.0.post0
-cryptography==43.0.3
+pandas==2.0.3
+python-dateutil==2.8.2
+cryptography==41.0.8
 
 # --- Variáveis de ambiente ---
-python-dotenv==1.0.1
+python-dotenv==1.0.0
 
 # --- Logs e debug ---
-Werkzeug==3.1.3
-
-# --- Testes e qualidade (opcional) ---
-pytest==8.3.3
-flake8==7.1.1
+Werkzeug==2.3.7
