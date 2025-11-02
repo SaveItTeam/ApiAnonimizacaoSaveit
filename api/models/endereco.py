@@ -8,6 +8,7 @@ class EnderecoAnonimizado(Base):
     cep: Mapped[str] = mapped_column(sa.String(64), nullable=False)
     cep_rua: Mapped[str] = mapped_column(sa.String(128), nullable=False)
     cep_bairro: Mapped[str] = mapped_column(sa.String(128), nullable=False)
+    cep_cidade: Mapped[str] = mapped_column(sa.String(64), nullable=False)
     cep_estado: Mapped[str] = mapped_column(sa.String(64), nullable=False)
     cep_pais: Mapped[str] = mapped_column(sa.String(32), nullable=False)
 

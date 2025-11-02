@@ -10,6 +10,7 @@ class PagamentoAnonimizado(Base):
     status: Mapped[str] = mapped_column(sa.String(16), nullable=False)
     dt_criacao: Mapped[datetime] = mapped_column(sa.Date, nullable=False)
     dt_validade: Mapped[datetime] = mapped_column(sa.Date, nullable=False)
+    forma_pagamento: Mapped[str] = mapped_column(sa.String(32), nullable=False)
 
     def __repr__(self) -> str:
-        return f"PagamentoAnonimizado(id={self.id!r}, status={self.status!r}, dt_criacao={self.dt_criacao!r}, dt_validade={self.dt_validade!r})"
+        return f"PagamentoAnonimizado(id={self.id!r}, status={self.status!r}, dt_criacao={self.dt_criacao!r}, dt_validade={self.dt_validade!r}, forma_pagamento={self.forma_pagamento!r})"

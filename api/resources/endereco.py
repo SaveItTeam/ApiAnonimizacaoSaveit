@@ -21,7 +21,7 @@ class Endereco(Resource):
     @marshal_with(endereco_campos)
     def post(self):
         novo_endereco = request.get_json()
-        df_endereco_anonimizado = pd.DataFrame([novo_endereco]).loc[:, ['id', 'cep', 'cep_rua', 'cep_bairro', 'cep_estado', 'cep_pais']]
+        df_endereco_anonimizado = pd.DataFrame([novo_endereco]).loc[:, ['id', 'cep', 'cep_rua', 'cep_bairro', 'cep_cidade', 'cep_estado', 'cep_pais']]
         df_endereco_anonimizado['cep'] = df_endereco_anonimizado['cep'].map(Anonimizacao.hashear)
         df_endereco_anonimizado['cep_rua'] = df_endereco_anonimizado['cep_rua'].map(Anonimizacao.mascarar)
         df_endereco_anonimizado['cep_bairro'] = df_endereco_anonimizado['cep_bairro'].map(Anonimizacao.mascarar)

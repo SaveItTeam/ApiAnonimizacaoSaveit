@@ -19,8 +19,8 @@ class FuncionarioAnonimizado(Base):
     telefone_pessoal: Mapped[str] = mapped_column(sa.String(20), nullable=False)
     telefone_trabalho: Mapped[str] = mapped_column(sa.String(20), nullable=False)
     experiencia: Mapped[str] = mapped_column(sa.Text, nullable=False)
-    id_empresa: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('empresa_anonimizada.id'), nullable=False)
-    id_industria: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('industria_anonimizada.id'), nullable=False)
+    id_empresa: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('empresa_anonimizada.id'), nullable=True)
+    id_industria: Mapped[int] = mapped_column(sa.Integer, sa.ForeignKey('industria_anonimizada.id'), nullable=True)
 
     def __repr__(self) -> str:
         return f"FuncionarioAnonimizado(id={self.id!r}, nome={self.nome!r}, cpf={self.cpf!r}, rg={self.rg!r}, dt_nascimento={self.dt_nascimento!r}, email={self.email!r}, senha={self.senha!r}, cargo={self.cargo!r}, dt_contratacao={self.dt_contratacao!r}, telefone_pessoal={self.telefone_pessoal!r}, telefone_trabalho={self.telefone_trabalho!r}, experiencia={self.experiencia!r}, id_empresa={self.id_empresa!r}, id_industria={self.id_industria!r})"

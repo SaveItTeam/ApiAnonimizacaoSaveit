@@ -9,7 +9,8 @@ pagamento_campos = {
     'id': fields.Integer,
     'status': fields.String,
     'dt_criacao': fields.String,
-    'dt_validade': fields.String
+    'dt_validade': fields.String,
+    'forma_pagamento': fields.String
 }
 
 class Pagamento(Resource):
