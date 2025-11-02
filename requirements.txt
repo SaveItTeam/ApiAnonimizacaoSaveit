@@ -15,7 +15,7 @@ SQLAlchemy==2.0.28
 psycopg2-binary==2.9.6
 
 # --- Manipulação e anonimização de dados ---
-pandas==2.0.3
+pandas==2.3.3
 python-dateutil==2.8.2
 cryptography==43.0.3
 
